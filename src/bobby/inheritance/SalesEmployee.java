@@ -5,11 +5,14 @@ public class SalesEmployee extends PermanentEmployee {
 	private double sales;
 	private double commission;
 
-	public SalesEmployee(String name, double wage, int day, int month, int year) {
+	public SalesEmployee(String name, double wage, int day, int month, int year, double sales, double commission) {
 		super(name, wage, day, month, year);
+		this.sales = sales;
+		this.commission = commission;
 	}
 	
-	public double generatePaycheck(double sales, double commission) {
+	@Override
+	public double generatePaycheck() {
 		recordVacation();
 		return (wage / 26) + (sales * commission);
 	}

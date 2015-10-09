@@ -16,6 +16,7 @@ public class PermanentEmployee extends Employee {
 		vacationBalance += 5;
 	}
 	
+	@Override
 	public double generatePaycheck() {
 		recordVacation();
 		return wage / 26;
