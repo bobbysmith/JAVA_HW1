@@ -6,20 +6,24 @@ package bobby.inheritance;
  */
 public class PermanentEmployee extends Employee {
 
-	private int vacationBalance;
+	protected double vacationBalance;
 	
 	public PermanentEmployee(String name, double wage, int day, int month, int year) {
 		super(name, wage, day, month, year);
 	}
 	
-	public void recordVacation() {
-		vacationBalance += 5;
+	public void recordVacation(double hoursTaken) {
+		vacationBalance -= hoursTaken;
 	}
 	
-	@Override
+	
 	public double generatePaycheck() {
-		recordVacation();
-		return wage / 26;
+		vacationBalance += 5;
+		double paycheck = wage / 26;
+		System.out.println("New vacation balance is: " + vacationBalance);
+		System.out.println("Permanent Employee annual wage is: " + wage);
+		System.out.printf("Current paycheck is: %.2f\n\n", paycheck);
+		return paycheck;
 	}
 	
 	

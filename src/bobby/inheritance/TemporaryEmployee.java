@@ -2,16 +2,21 @@ package bobby.inheritance;
 
 public class TemporaryEmployee extends Employee {
 	
-	private double hoursWorked = 0;
+	
 
-	public TemporaryEmployee(String name, double wage, int day, int month, int year, double hours) {
+	public TemporaryEmployee(String name, double wage, int day, int month, int year) {
 		super(name, wage, day, month, year);
-		this.hoursWorked = hours;
 	}
 	
-	@Override
+	
+	
 	public double generatePaycheck() {
-		return wage * hoursWorked;
+		double paycheck = wage * numberOfHours;
+		
+		System.out.println("Temporary Employee hourly wage is: " + wage);
+		System.out.println("Hours worked: " + numberOfHours);
+		System.out.printf("Current paycheck is: %.2f\n\n", paycheck);
+		return paycheck;
 	}
 
 }

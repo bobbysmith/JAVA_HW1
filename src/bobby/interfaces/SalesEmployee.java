@@ -1,6 +1,6 @@
 package bobby.interfaces;
 
-public class SalesEmployee extends PermanentEmployee {
+public class SalesEmployee extends PermanentEmployee implements ISales {
 	
 	private double sales;
 	private double commission;
