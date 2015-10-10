@@ -1,27 +1,55 @@
 package bobby.interfaces;
+
+import java.util.GregorianCalendar;
+
 /***
  * 
  * @author bobbysmith
  *
  */
-public class PermanentEmployee extends Employee implements IEmployee {
+public class PermanentEmployee implements Employee {
 
-	private int vacationBalance;
+	protected String name;
+	protected double wage;
+	protected GregorianCalendar hireDate;
+	protected double vacationBalance = 0;
+	private double hours;
 	
 	public PermanentEmployee(String name, double wage, int day, int month, int year) {
-		super(name, wage, day, month, year);
+		this.name = name;
+		this.wage = wage;
+		hireDate = new GregorianCalendar(day, month, year);
 	}
 	
-	public void recordVacation() {
-		vacationBalance += 5;
-	}
 	
-	@Override
 	public double generatePaycheck() {
-		recordVacation();
-		return wage / 26;
+		vacationBalance += 5;
+		double paycheck = wage / 26;
+		System.out.println("New vacation balance is: " + vacationBalance);
+		System.out.println("Permanent Employee annual wage is: " + wage);
+		System.out.printf("Current paycheck is: %.2f\n\n", paycheck);
+		return paycheck;
 	}
-	
+
+	public void recordVacation(double hoursTaken) {
+		vacationBalance -= hoursTaken;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public double getWage() {
+		return this.wage;
+	}
+
+	public GregorianCalendar getHireDate() {
+		return hireDate;
+	}
+
+	public void setHours(double h) {
+		this.hours = h;
+	}
 	
 	
 }

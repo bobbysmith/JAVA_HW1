@@ -10,7 +10,7 @@ public class EmployeeTest {
 		Employee allan = new SalesEmployee("Allan", 25000.0, 14, 3, 2012);
 		Employee eric = new SalesEmployee("Eric", 28000.0, 28, 7, 2012);
 		
-		
+
 		System.out.println("Dave");
 		dave.generatePaycheck();
 		

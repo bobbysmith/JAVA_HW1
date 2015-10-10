@@ -2,26 +2,31 @@ package bobby.interfaces;
 import java.util.GregorianCalendar;
 
 
-public abstract class Employee {
+public interface Employee {
 	
-	protected String name;
-	protected double wage;
-	protected GregorianCalendar hireDate;
-	protected double numberOfHours;
+//	protected String name;
+//	protected double wage;
+//	protected GregorianCalendar hireDate;
+//	protected double numberOfHours;
+//	protected double sales;
+//	protected double commission;
+//	
+//	public Employee(String name, double wage, int day, int month, int year) {
+//		this.name = name;
+//		this.wage = wage;
+//		this.hireDate = new GregorianCalendar(day, month, year);
+//	}
 	
-	public Employee(String name, double wage, int day, int month, int year) {
-		this.name = name;
-		this.wage = wage;
-		this.hireDate = new GregorianCalendar(day, month, year);
-	}
+	public double generatePaycheck();
 	
-	public abstract double generatePaycheck();
+	public void recordVacation(double hoursTaken);
+
+	public String getName();
 	
-	public String getName() {
-		return name;
-	}
+	public double getWage();
 	
-	public void setHours(double n) {
-		numberOfHours = n;
-	}
+	public GregorianCalendar getHireDate();
+	
+	public void setHours(double h);
+
 }

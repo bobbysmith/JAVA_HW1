@@ -1,17 +1,50 @@
 package bobby.interfaces;
 
-public class TemporaryEmployee extends Employee {
-	
-	private double hoursWorked = 0;
+import java.util.GregorianCalendar;
 
-	public TemporaryEmployee(String name, double wage, int day, int month, int year, double hours) {
-		super(name, wage, day, month, year);
-		this.hoursWorked = hours;
+public class TemporaryEmployee implements Employee {
+	
+	protected String name;
+	protected double wage;
+	protected GregorianCalendar hireDate;
+	private double numberOfHours;
+	
+	public TemporaryEmployee(String name, double wage, int day, int month, int year) {
+		this.name = name;
+		this.wage = wage;
+		hireDate = new GregorianCalendar(day, month, year);
 	}
 	
-	@Override
+	public void setHours(double n) {
+		numberOfHours = n;
+	}
+	
+	
 	public double generatePaycheck() {
-		return wage * hoursWorked;
+		double paycheck = wage * numberOfHours;
+		
+		System.out.println("Temporary Employee hourly wage is: " + wage);
+		System.out.println("Hours worked: " + numberOfHours);
+		System.out.printf("Current paycheck is: %.2f\n\n", paycheck);
+		return paycheck;
+	}
+
+
+	public void recordVacation(double hoursTaken) {
+		System.out.println("Temporary employees do not have vacation hours.");		
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public double getWage() {
+		return wage;
+	}
+
+
+	public GregorianCalendar getHireDate() {
+		return hireDate;
 	}
 
 }
