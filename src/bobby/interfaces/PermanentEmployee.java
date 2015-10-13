@@ -1,12 +1,7 @@
 package bobby.interfaces;
-
 import java.util.GregorianCalendar;
 
-/***
- * 
- * @author bobbysmith
- *
- */
+
 public class PermanentEmployee implements Employee {
 
 	protected String name;
