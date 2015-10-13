@@ -22,7 +22,12 @@ public class StudentScores {
 		System.out.println("Last element in Vector student is " + students.lastElement() + " with name " + students.lastElement().getName() + "\n");
 		
 		// checking if vector contains student with name Bobby
-		System.out.println(students.contains(names) +"\n");
+		for (Student s : students) {
+			if (s.getName() == "Bobby") {
+				System.out.println("Student Bobby exists." + "\n");
+			}
+		}
+//		System.out.println(students.i);
 		
 		// removing student object from index 4 and adding new student object at that index
 		System.out.println("Student to remove at index 4: " + students.get(4).getName());

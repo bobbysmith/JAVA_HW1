@@ -1,39 +1,31 @@
 package bobby.collections;
 import java.util.ArrayList;
+import java.util.StringTokenizer;
 
 public class MyCollection {
 	
-	private static ArrayList<String> myList = new ArrayList<String>();
+	private static ArrayList<String> myList;
 	private static String s;
 	
-//	s.split(" ")
-	
 	public static void stringIterate(String s) {
-		ArrayList<String> str = new ArrayList<String>();
-		for (int i = 0; i < s.length(); i++) {
-//			if (s.charAt(i) == '.') {
-//				System.out.println("Found it.");
-//			} else {
-//				System.out.println("Nope.");
-//			}
-			str.add(s.split(" "));
+		myList = new ArrayList<String>();
+		StringTokenizer stringTokenizer = new StringTokenizer(s);
+//		System.out.println("Total number of tokens found : " + stringTokenizer.countTokens());
+		while (stringTokenizer.hasMoreTokens()) {
+			myList.add(stringTokenizer.nextToken());
 		}
 	}
 	
 	public static void main(String[] args) {
 		s = "In solving a problem of this sort, the grand thing is to be able to reason backwards. That is a very useful accomplishment, and a very easy one, but people do not practice it much. In the every-day affairs of life it is more useful to reason forwards, and so the other comes to be neglected. There are fifty who can reason synthetically for one who can reason analytically.";
 		stringIterate(s);
+		System.out.println(myList);
 	}
 
 }
 
 
 
-//Create a collection as an instance of ArrayList class. Tokenize the following string by delimiter “  , .”  (blank space, comma and a dot): 
-//
-//In solving a problem of this sort, the grand thing is to be able to reason backwards. That is a very useful accomplishment, and a very easy one, but people do not practice it much. In the every-day affairs of life it is more useful to reason forwards, and so the other comes to be neglected. There are fifty who can reason synthetically for one who can reason analytically.
-//
-//(The above quote is from Sir Arthur Conan Doyle - Sherlock Holmes, in "A Study in Scarlet")
 //
 //Create the list with the tokens populated from the above string. Verify that the collection is not empty. Find the size of the collection. 
 //
