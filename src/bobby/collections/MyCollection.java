@@ -8,22 +8,11 @@ public class MyCollection {
 	private static String s;
 	
 	public static void stringIterate(String s) {
-<<<<<<< HEAD
-		ArrayList<String> str = new ArrayList<String>();
-		for (int i = 0; i < s.length(); i++) {
-//			if (s.charAt(i) == '.') {
-//				System.out.println("Found it.");
-//			} else {
-//				System.out.println("Nope.");
-//			}
-			str.addAll(s.split(" "));
-=======
 		myList = new ArrayList<String>();
 		StringTokenizer stringTokenizer = new StringTokenizer(s);
 //		System.out.println("Total number of tokens found : " + stringTokenizer.countTokens());
 		while (stringTokenizer.hasMoreTokens()) {
 			myList.add(stringTokenizer.nextToken());
->>>>>>> d10cd8232e68070e55f1eb59a09f56a62deef03e
 		}
 	}
 	
