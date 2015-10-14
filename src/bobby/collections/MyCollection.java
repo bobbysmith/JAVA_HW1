@@ -16,7 +16,7 @@ public class MyCollection {
 //			} else {
 //				System.out.println("Nope.");
 //			}
-			str.add(s.split(" "));
+			str.addAll(s.split(" "));
 		}
 	}
 	
